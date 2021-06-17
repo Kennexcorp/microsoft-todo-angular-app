@@ -20,6 +20,8 @@ import {MatInputModule} from '@angular/material/input';
 import { BottomNavBarComponent } from './bottom-nav-bar/bottom-nav-bar.component';
 import { AddGroupDialogComponent } from './dialogs/add-group-dialog/add-group-dialog.component';
 import { AddListComponent } from './dialogs/add-list/add-list.component';
+import {MatTabsModule} from '@angular/material/tabs';
+import { MyDayComponent } from './my-day/my-day.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { AddListComponent } from './dialogs/add-list/add-list.component';
     DashboardComponent,
     BottomNavBarComponent,
     AddGroupDialogComponent,
-    AddListComponent
+    AddListComponent,
+    MyDayComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +47,8 @@ import { AddListComponent } from './dialogs/add-list/add-list.component';
     MatMenuModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

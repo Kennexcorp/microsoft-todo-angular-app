@@ -1,6 +1,8 @@
+import { NewList } from './../dialogs/add-list/add-list.component';
 import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { AddGroupDialogComponent } from '../dialogs/add-group-dialog/add-group-dialog.component';
+import { AddListComponent } from '../dialogs/add-list/add-list.component';
 
 export interface DialogData {
   animal: string;
@@ -14,8 +16,15 @@ export interface DialogData {
 })
 export class BottomNavBarComponent implements OnInit {
 
-  animal: string = '';
-  name: string = '';
+  animal: string = 'hello';
+  name: string = 'hi';
+
+  newList: NewList = {
+    title: '',
+    color: '',
+    icon: '',
+    photo: ''
+  }
 
   constructor(public dialog: MatDialog) { }
 
@@ -31,6 +40,18 @@ export class BottomNavBarComponent implements OnInit {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
       this.animal = result;
+    });
+  }
+
+  openAddListDialog(): void {
+    const dialogRef = this.dialog.open(AddListComponent, {
+      width: '250px',
+      data: this.newList
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      this.newList = result;
     });
   }
 

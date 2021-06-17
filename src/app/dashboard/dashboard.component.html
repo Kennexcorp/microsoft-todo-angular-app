@@ -1,6 +1,11 @@
+<app-nav-bar></app-nav-bar>
+
 <mat-selection-list [multiple]="false">
-  <mat-list-option *ngFor="let category of categories">
+  <mat-list-option *ngFor="let category of categories" [routerLink]="[category.link]">
     {{category.title}}
-    <mat-icon matListIcon slot="end">{{category.icon}}</mat-icon>
+    <mat-icon matListIcon >{{category.icon}}</mat-icon>
   </mat-list-option>
 </mat-selection-list>
+<mat-divider></mat-divider>
+
+<app-bottom-nav-bar></app-bottom-nav-bar>

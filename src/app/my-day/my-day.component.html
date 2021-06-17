@@ -1,0 +1,43 @@
+<mat-toolbar color="blank">
+
+  <button mat-icon-button class="example-icon" [routerLink]="['']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item>
+      <mat-icon>sort</mat-icon>Sort By
+    </button>
+    <button mat-menu-item>
+      <mat-icon>shortcut</mat-icon>Add shortcut to homescreen
+    </button>
+    <button mat-menu-item>
+      <mat-icon>dark_mode</mat-icon>Change theme
+    </button>
+  </mat-menu>
+
+
+</mat-toolbar>
+<mat-list>
+  <mat-list-item>
+    <div mat-line>My Day</div>
+    <div mat-line> {{ 12/02/12 | date}} </div>
+  </mat-list-item>
+
+</mat-list>
+<div class="fixed-bottom p-2 text-center">
+  <button mat-raised-button>
+    <mat-icon>light_mode</mat-icon> Suggestions
+  </button>
+</div>
+<div class="fixed-bottom p-2 text-end">
+
+  <button mat-mini-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+</div>

@@ -10,23 +10,28 @@ export class DashboardComponent implements OnInit {
   categories: any[] = [
     {
       "title" :  "My Day",
-      "icon" :  "light_mode"
+      "icon" :  "light_mode",
+      "link" : "/my-day"
     },
     {
       "title" :  "Important",
-      "icon" :  "grade"
+      "icon" :  "grade",
+      "link" : "/my-day"
     },
     {
       "title" :  "Planned",
-      "icon" :  "table_view"
+      "icon" :  "table_view",
+      "link" : "/my-day"
     },
     {
       "title" :  "Assigned to you",
-      "icon" :  "person_outline"
+      "icon" :  "person_outline",
+      "link" : "/my-day"
     },
     {
       "title" :  "Tasks",
-      "icon" :  "task"
+      "icon" :  "task",
+      "link" : "/my-day"
     }
   ];
   constructor() { }

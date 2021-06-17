@@ -1,22 +1,9 @@
 <div class="fixed-bottom">
 
   <mat-toolbar color="primary">
-    <button mat-button [matMenuTriggerFor]="menu">
-      <mat-icon>add</mat-icon>
-      <span>New List</span>
+    <button mat-icon-button class="example-icon" (click)="openAddListDialog()">
+      <mat-icon>add</mat-icon><mat-label>New list</mat-label>
     </button>
-    <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <mat-icon>add</mat-icon> Add account
-      </button>
-      <button mat-menu-item>
-        <mat-icon>manage_accounts</mat-icon> Add account
-      </button>
-      <mat-divider></mat-divider>
-      <button mat-menu-item>
-        <mat-icon>settings</mat-icon>Settings
-      </button>
-    </mat-menu>
 
     <span class="example-spacer"></span>
 

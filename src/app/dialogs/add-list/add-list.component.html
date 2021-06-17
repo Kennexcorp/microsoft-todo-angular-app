@@ -1,1 +1,11 @@
-<p>add-list works!</p>
+<div mat-dialog-content>
+  <p>New list</p>
+  <mat-form-field>
+    <mat-label>Name this group</mat-label>
+    <span><input type="text" matInput></span>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="onNoClick()">Cancel</button>
+  <button mat-button [mat-dialog-close]="data" cdkFocusInitial>Create Group</button>
+</div>
