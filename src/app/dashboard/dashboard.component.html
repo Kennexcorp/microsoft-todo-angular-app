@@ -1,0 +1,6 @@
+<mat-selection-list [multiple]="false">
+  <mat-list-option *ngFor="let category of categories">
+    {{category.title}}
+    <mat-icon matListIcon slot="end">{{category.icon}}</mat-icon>
+  </mat-list-option>
+</mat-selection-list>
