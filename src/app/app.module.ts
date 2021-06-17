@@ -14,12 +14,21 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import {MatMenuModule} from '@angular/material/menu';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import { BottomNavBarComponent } from './bottom-nav-bar/bottom-nav-bar.component';
+import { AddGroupDialogComponent } from './dialogs/add-group-dialog/add-group-dialog.component';
+import { AddListComponent } from './dialogs/add-list/add-list.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     NavBarComponent,
-    DashboardComponent
+    DashboardComponent,
+    BottomNavBarComponent,
+    AddGroupDialogComponent,
+    AddListComponent
   ],
   imports: [
     BrowserModule,
@@ -32,9 +41,12 @@ import {MatMenuModule} from '@angular/material/menu';
     MatSidenavModule,
     MatIconModule,
     MatListModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDialogModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule { }
