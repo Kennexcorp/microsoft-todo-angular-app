@@ -30,14 +30,14 @@
   </mat-list-item>
 
 </mat-list>
-<div class="fixed-bottom p-2 text-center">
-  <button mat-raised-button>
+<div class="p-1 text-center">
+  <button mat-raised-button (click)="openBottomSheet()" class="position-absolute bottom-0 translate-middle start-50">
     <mat-icon>light_mode</mat-icon> Suggestions
   </button>
-</div>
-<div class="fixed-bottom p-2 text-end">
 
-  <button mat-mini-fab>
+  <button mat-mini-fab class="position-absolute bottom-0 end-0 translate-middle">
     <mat-icon>add</mat-icon>
   </button>
+
 </div>
+

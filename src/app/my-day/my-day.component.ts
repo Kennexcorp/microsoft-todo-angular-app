@@ -1,4 +1,6 @@
+import { SuggestionsComponent } from './suggestions/suggestions.component';
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-my-day',
@@ -7,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyDayComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _bottomSheet: MatBottomSheet) {}
+
+  openBottomSheet(): void {
+    this._bottomSheet.open(SuggestionsComponent);
+  }
 
   ngOnInit(): void {
   }

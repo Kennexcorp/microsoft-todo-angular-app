@@ -1,0 +1,78 @@
+<mat-toolbar color="blank">
+
+  <button mat-icon-button class="example-icon" [routerLink]="['']">
+    <mat-icon>arrow_back</mat-icon>
+  </button>
+
+  <span class="example-spacer"></span>
+
+  <button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngIf="this.pageSlug != 'day'">
+      <mat-icon>category</mat-icon>Group By
+    </button>
+    <button mat-menu-item>
+      <mat-icon>sort</mat-icon>Sort By
+    </button>
+    <button mat-menu-item *ngIf="this.pageSlug != 'day'">
+      <mat-icon>sort_by_alpha</mat-icon>Reorder tasks
+    </button>
+    <button mat-menu-item>
+      <mat-icon>shortcut</mat-icon>Add shortcut to homescreen
+    </button>
+    <button mat-menu-item>
+      <mat-icon>dark_mode</mat-icon>Change theme
+    </button>
+    <button mat-menu-item *ngIf="this.pageSlug != 'day'">
+      <mat-icon>share</mat-icon>Send a copy
+    </button>
+    <button mat-menu-item *ngIf="this.pageSlug != 'day'">
+      <mat-icon>print</mat-icon>Print list
+    </button>
+    <button mat-menu-item (click)="toggleCompletedStatus()" *ngIf="this.pageSlug != 'day'">
+      <mat-icon>task_alt</mat-icon><span *ngIf="showOnlyCompletedTask">Show</span> <span
+        *ngIf="!showOnlyCompletedTask">Hide</span> completed tasks
+    </button>
+  </mat-menu>
+
+
+</mat-toolbar>
+<mat-list>
+  <mat-list-item>
+    <div mat-line>{{pageTitle}}</div>
+    <div mat-line> {{ 12/02/12 | date}} </div>
+  </mat-list-item>
+
+  <mat-list-item>
+
+    <div mat-line>
+      <button mat-button [matMenuTriggerFor]="filter" mat-raised-button color="primary">
+        <mat-icon>list</mat-icon>{{ defaultFilter }}
+      </button>
+
+    </div>
+
+    <mat-menu #filter="matMenu">
+      <button mat-menu-item (click)="this.defaultFilter = 'Overdue'"><mat-icon>today</mat-icon>Overdue</button>
+      <button mat-menu-item (click)="this.defaultFilter = 'Today'"><mat-icon>today</mat-icon>Today</button>
+      <button mat-menu-item (click)="this.defaultFilter = 'Tomorrow'"><mat-icon>book_online</mat-icon>Tomorrow</button>
+      <button mat-menu-item (click)="this.defaultFilter = 'This Week'"><mat-icon>date_range</mat-icon>This week</button>
+      <button mat-menu-item (click)="this.defaultFilter = 'Later'"><mat-icon>book_online</mat-icon>Later</button>
+      <button mat-menu-item (click)="this.defaultFilter = 'All Planned'"><mat-icon>date_range</mat-icon>All planned</button>
+    </mat-menu>
+  </mat-list-item>
+
+</mat-list>
+
+<div class="p-1 text-center">
+  <button mat-raised-button (click)="openBottomSheet()" class="position-absolute bottom-0 translate-middle start-50" *ngIf="this.pageSlug === 'day'">
+    <mat-icon>light_mode</mat-icon> Suggestions
+  </button>
+
+  <button mat-mini-fab class="position-absolute bottom-0 end-0 translate-middle">
+    <mat-icon>add</mat-icon>
+  </button>
+
+</div>

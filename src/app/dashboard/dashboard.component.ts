@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
+export interface Category {
+  title: string;
+  icon: string;
+  slug: string;
+}
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
@@ -7,36 +13,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  categories: any[] = [
+  categories: Category[] = [
     {
       "title" :  "My Day",
       "icon" :  "light_mode",
-      "link" : "/my-day"
+      "slug" : "day"
     },
     {
       "title" :  "Important",
       "icon" :  "grade",
-      "link" : "/my-day"
+      "slug" : "important"
     },
     {
       "title" :  "Planned",
       "icon" :  "table_view",
-      "link" : "/my-day"
+      "slug" : "planned"
     },
     {
       "title" :  "Assigned to you",
       "icon" :  "person_outline",
-      "link" : "/my-day"
+      "slug" : "personal"
     },
     {
       "title" :  "Tasks",
       "icon" :  "task",
-      "link" : "/my-day"
+      "slug" : "tasks"
     }
   ];
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
+  }
+
+  viewCategory(category: Category) {
+    this.router.navigate(['/category', {slug: category.slug, title: category.title}]);
   }
 
 }
